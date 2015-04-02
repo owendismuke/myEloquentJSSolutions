@@ -8,4 +8,8 @@ My solutions to the problems presented in http://eloquentjavascript.net/
             FizzBuzz
             Chess Board
       
-      Ch 3: working...
+      Ch 3: Minimum
+            Recursion
+            Bean Counting
+      
+      Ch 4: working...
