@@ -14,4 +14,9 @@ My solutions to the problems presented in http://eloquentjavascript.net/
       * Bean Counting
       
 * Ch 4:
+      * Sum of a Range
+      * Reversing an Array
+      * A list
+      * Deep Comparison
+* Ch 5:
       * working...
