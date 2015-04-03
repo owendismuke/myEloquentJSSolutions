@@ -19,3 +19,28 @@ function sum(numArray){
 };
 
 
+//Reversing an Array
+//Without using Array.reverse
+//Reversing the array in place definitely made me think.
+function reverseArray(oldArray){
+  var newArray = [];
+  for(var i = 0; i < oldArray.length; i++){
+    newArray.unshift(oldArray[i]);
+  };
+  return newArray;
+};
+
+function reverseArrayInPlace(array){
+  for(var i = 0, val; i < Math.floor(array.length/2); i++){
+    val = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - 1 - i] = val;
+    };
+};
+
+console.log(reverseArray(["A", "B", "C"]));
+// → ["C", "B", "A"];
+var arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+// → [5, 4, 3, 2, 1]
