@@ -22,4 +22,7 @@ I am performing these exercise both for my own growth and in preparation to reap
       * Deep Comparison
 
 * ###### Ch 5:
-      * working...
+      * Flattening
+      * Mother-Child Age Difference
+      * Historical Life Expectancy (in progress)
+      * ...
