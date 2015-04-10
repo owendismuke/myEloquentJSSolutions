@@ -42,12 +42,14 @@ console.log(Math.round(average(ancestry.filter(mother).map(mothersAge)) * 10)/10
 
 //I modified the provided average function to allow me to pass a calculation function to be use on the values.
 function average(array, calc) {
-  function plus(a, b) { 
+  function plus(a, b) {
     return typeof calc === 'function' 
     	? calc(a) + calc(b)
     	: a + b;
   }
-  return array.reduce(plus) / array.length;
+  //Initial value of 0 was key here. 
+  //When there was only one person in the array, the callback was never called.
+  return array.reduce(plus, 0) / array.length;
 }
 
 function group(person){
@@ -59,14 +61,12 @@ function groupBy(array, fn){
   var result = {};
   for (var i = 0, localArray = array, ii = localArray.length; i < ii; i++){
   	var group = fn(localArray[i]);
-    
     if (result.hasOwnProperty(group)){
       result[group].push(localArray[i]);
     } else {
       result[group] = [localArray[i]];
     }
-  }
-  
+  }  
   return result;
 }
 
