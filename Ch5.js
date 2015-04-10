@@ -39,8 +39,14 @@ console.log(Math.round(average(ancestry.filter(mother).map(mothersAge)) * 10)/10
 
 //Historical Life Expectancy -- Incomplete. I wanted to save my work.
 //Compute and output average age of the people in the ancestry data set per century
-function average(array) {
-  function plus(a, b) { return a + b; }
+
+//I modified the provided average function to allow me to pass a calculation function to be use on the values.
+function average(array, calc) {
+  function plus(a, b) { 
+    return typeof calc === 'function' 
+    	? calc(a) + calc(b)
+    	: a + b;
+  }
   return array.reduce(plus) / array.length;
 }
 
@@ -64,8 +70,17 @@ function groupBy(array, fn){
   return result;
 }
 
-//TODO finish the logic that actually works the averaging.
-console.log(groupBy(ancestry, group));
+function age(person){
+  return typeof person === 'number' ? person : person.died - person.born;
+}
+
+var groupedAncestors = groupBy(ancestry, group)
+
+for(var key in groupedAncestors){
+  if (groupedAncestors.hasOwnProperty(key)){
+    console.log(key + ": " + Math.round(average(groupedAncestors[key], age) * 10) / 10);    
+  }
+}
 
 // → 16: 43.5
 //   17: 51.2
