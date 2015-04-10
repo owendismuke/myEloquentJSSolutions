@@ -88,3 +88,31 @@ for(var key in groupedAncestors){
 //   19: 54.8
 //   20: 84.7
 //   21: 94
+
+
+//Every and then Some
+//Write out the loops for every and some. 
+//Every should return true if every element is true against the pred.
+//Some should return true if any element matches the pred.
+function every(array, pred){
+  for (var i = 0, localArray = array, ii = localArray.length; i < ii; i++){
+    if(!pred(localArray[i])){return false;}
+  }
+  return true;
+}
+
+function some(array, pred){
+  for (var i = 0, localArray = array, ii = localArray.length; i < ii; i++){
+    if(pred(localArray[i])){return true;}
+  }
+  return false;
+}
+
+console.log(every([NaN, NaN, NaN], isNaN));
+// → true
+console.log(every([NaN, NaN, 4], isNaN));
+// → false
+console.log(some([NaN, 3, 4], isNaN));
+// → true
+console.log(some([2, 3, 4], isNaN));
+// → false
