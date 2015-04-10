@@ -25,4 +25,7 @@ I am performing these exercise both for my own growth and in preparation to reap
       * Flattening
       * Mother-Child Age Difference
       * Historical Life Expectancy (in progress)
-      * ...
+      * Every and then Some
+
+* ###### Ch 6:
+      * working...
