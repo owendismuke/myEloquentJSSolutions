@@ -40,7 +40,7 @@ function mothersAge(p){
 
 console.log(Math.round(average(ancestry.filter(mother).map(mothersAge)) * 10)/10);
 
-//Historical Life Expectancy -- Incomplete. I wanted to save my work.
+//Historical Life Expectancy
 //Compute and output average age of the people in the ancestry data set per century
 
 //I modified the provided average function to allow me to pass a calculation function to be use on the values.
