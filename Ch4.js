@@ -115,6 +115,15 @@ console.log(nthRecursive(arrayToList([10, 20, 30]), 1));
 //If the things are objects, compare all of the properties using recursion.
 
 function deepEqual(thing1, thing2){
+  //Crazy mested ternary version using reduce and recursion that ws introduced to me in Hack Reactor
+  return thing1 === thing2
+        ? true : typeof thing1 !== "object" || typeof thing2 !== "object"
+            ? false : !!Object.keys(thing1).reduce(function(prev,curr){
+                    if (prev) { return deepEqual(thing1[curr], thing2[curr]); }
+                }, true);
+                
+  //Original version
+  /*
   if (thing1 === thing2){
     return true;
   }
@@ -141,7 +150,7 @@ function deepEqual(thing1, thing2){
     return true;
   } 
   
-  return false;
+  return false;*/
 };
 
 var obj = {here: {is: "an"}, object: 2};
